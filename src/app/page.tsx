@@ -2,6 +2,36 @@
 
 import { useState } from "react";
 
+const BLURB = `Hi,
+I'm Pierce. But you already know that.
+Quick refresher.
+I'm from outside Philadelphia and studied at the University of Miami. I majored in Global Health with a minor in Health Management and Policy. I've interned across healthcare, on the policy consulting side, advising digital health startups, and on the hospital enterprise side.
+At Sachs Policy Group, I made a lot of cold calls, sat in on many meetings, and spent more time than I'd like to admit on hold trying to get a straight answer.
+That was when it clicked for me.
+The hardest problems aren't usually in the product. They're in the layer between the customer and the answer.
+Decagon is rebuilding that layer by bringing customer experience back into support and grievances.
+Some people preferred Dr. Seuss. I preferred Curious George.
+I've always been a builder and a fixer. Growing up, my dad called me MacGyver because I was always building something.
+Yes, I was a Legos kid, but in third grade, I traded plastic bricks for real wood and taught myself to woodwork. I'm always learning, always digging deeper.
+This past year, I taught myself to code. Rather than build something that's been done before, I built a consumer platform that helps people understand their medical costs across Manhattan.
+Of course I integrated an AI agent. How could I not? Decagon's been doing it from the start.
+Every project teaches me something new. Every one adds a tool to the kit.
+Sales is the next one I want to pick up.
+I was not a football or lacrosse kid, but I was a rower.
+Rowing teaches you something most sports don't. You're in the same boat with your teammates, pulling toward the same finish line, but you're also competing against them for a seat.
+You have to be accountable. You have to pull your weight. You support the people around you while pushing yourself to be better than you were yesterday.
+That tension between team and individual, between camaraderie and competition, is where growth happens.
+From my conversations with the team at Decagon, it's also how you scale a sales org that keeps winning.
+What makes Decagon different is the part of the customer experience you're rebuilding.
+It's the part nobody loves. The complaints line. The hold music. The form that has to be filled out before anyone can help.
+Everyone wants to build a product that becomes a household name like Apple, Uber, or Instagram, with easy onboarding, a magical demo, and customers lining up before product launches.
+Decagon isn't trying to build its own name-brand product. You're helping companies deliver on the promises they've already made to their customers.
+It's the work that doesn't get applauded, but it's the work that decides whether someone actually gets the help they came for, or gives up and walks away.
+If you couldn't tell by now, I'm a self-starter.
+I'm curious. I'm ambitious. I'm coachable.
+I've heard no enough times to know the next dial is the only one that matters.
+I'd like the shot.`;
+
 export default function HirePierceAtDecagonPage() {
   const [imgFailed, setImgFailed] = useState(false);
 
@@ -17,7 +47,7 @@ export default function HirePierceAtDecagonPage() {
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute top-1/3 -left-48 h-[420px] w-[420px] rounded-full blur-3xl opacity-40"
+        className="pointer-events-none absolute top-[700px] -left-48 h-[420px] w-[420px] rounded-full blur-3xl opacity-40"
         style={{
           background:
             "radial-gradient(closest-side, rgba(99,102,241,0.45), rgba(99,102,241,0))",
@@ -39,7 +69,8 @@ export default function HirePierceAtDecagonPage() {
         </a>
       </header>
 
-      <section className="relative z-10 mx-auto max-w-6xl px-6 pb-24 pt-12 md:pt-20">
+      {/* Hero — photo + headline */}
+      <section className="relative z-10 mx-auto max-w-6xl px-6 pb-16 pt-12 md:pt-20">
         <div className="grid items-center gap-12 md:grid-cols-2 md:gap-16">
           <div className="order-1 md:order-2 flex justify-center md:justify-end">
             <div className="relative">
@@ -85,37 +116,31 @@ export default function HirePierceAtDecagonPage() {
                 Here&apos;s why I want to work at Decagon.
               </span>
             </h1>
-
-            <div className="mt-8 max-w-xl text-lg leading-relaxed text-[#0A0A23]/75">
-              <p className="italic text-[#0A0A23]/50">
-                [Your blurb goes here. Tell Decagon why you want to join — what
-                drew you to AI agents for customer experience, what you&apos;d
-                bring to the team, and the kind of problems you want to be
-                solving next. Replace this paragraph in{" "}
-                <code className="not-italic rounded bg-[#0A0A23]/5 px-1.5 py-0.5 text-sm">
-                  src/app/page.tsx
-                </code>
-                .]
-              </p>
-            </div>
-
-            <div className="mt-10 flex flex-wrap items-center gap-3">
-              <a
-                href="mailto:jphberkman@gmail.com"
-                className="rounded-full bg-[#0A0A23] px-6 py-3 text-sm font-semibold text-white transition hover:bg-black"
-              >
-                Email me
-              </a>
-              <a
-                href="https://decagon.ai"
-                target="_blank"
-                rel="noreferrer"
-                className="rounded-full border border-[#0A0A23]/15 px-6 py-3 text-sm font-semibold text-[#0A0A23] transition hover:border-[#0A0A23]/40"
-              >
-                Visit Decagon →
-              </a>
-            </div>
           </div>
+        </div>
+      </section>
+
+      {/* Blurb */}
+      <section className="relative z-10 mx-auto max-w-3xl px-6 pb-16">
+        <div className="whitespace-pre-line text-lg leading-relaxed text-[#0A0A23]/85">
+          {BLURB}
+        </div>
+
+        <div className="mt-12 flex flex-wrap items-center gap-3">
+          <a
+            href="mailto:jphberkman@gmail.com"
+            className="rounded-full bg-[#0A0A23] px-6 py-3 text-sm font-semibold text-white transition hover:bg-black"
+          >
+            Email me
+          </a>
+          <a
+            href="https://decagon.ai"
+            target="_blank"
+            rel="noreferrer"
+            className="rounded-full border border-[#0A0A23]/15 px-6 py-3 text-sm font-semibold text-[#0A0A23] transition hover:border-[#0A0A23]/40"
+          >
+            Visit Decagon →
+          </a>
         </div>
       </section>
 
