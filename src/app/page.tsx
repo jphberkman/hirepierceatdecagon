@@ -30,15 +30,11 @@ const PEOPLE = {
     name: "Jeffrey Sachs",
     role: "CEO, Sachs Policy Group",
     linkedin: "https://www.linkedin.com/in/jeffrey-sachs-392103101/",
-    initials: "JS",
-    photo: "/people/sachs.jpg",
   },
   mercado: {
     name: "Stephanie Mercado",
     role: "Manager, Lululemon",
     linkedin: "https://www.linkedin.com/in/stephanie-mercado-947678b4/",
-    initials: "SM",
-    photo: "/people/mercado.jpg",
   },
 } as const;
 
@@ -303,21 +299,14 @@ export default function HirePierceAtDecagonPage() {
                     href={q.person.linkedin}
                     target="_blank"
                     rel="noreferrer"
-                    className="group inline-flex items-center gap-3"
+                    className="group inline-flex flex-col"
                   >
-                    <Avatar
-                      photo={q.person.photo}
-                      initials={q.person.initials}
-                      name={q.person.name}
-                    />
-                    <span className="flex flex-col">
-                      <span className="flex items-center gap-1.5 font-semibold text-[#0A0A23] group-hover:underline">
-                        {q.person.name}
-                        <LinkedInIcon className="h-3.5 w-3.5 text-[#0A0A23]/40" />
-                      </span>
-                      <span className="text-sm text-[#0A0A23]/60">
-                        {q.person.role}
-                      </span>
+                    <span className="flex items-center gap-1.5 font-semibold text-[#0A0A23] group-hover:underline">
+                      {q.person.name}
+                      <LinkedInIcon className="h-3.5 w-3.5 text-[#0A0A23]/40" />
+                    </span>
+                    <span className="text-sm text-[#0A0A23]/60">
+                      {q.person.role}
                     </span>
                   </a>
                 </figcaption>
@@ -387,33 +376,3 @@ function LinkedInIcon({ className }: { className?: string }) {
   );
 }
 
-function Avatar({
-  photo,
-  initials,
-  name,
-}: {
-  photo: string;
-  initials: string;
-  name: string;
-}) {
-  const [failed, setFailed] = useState(false);
-  if (failed) {
-    return (
-      <span
-        className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#5B5BFF] text-xs font-semibold text-white"
-        aria-label={name}
-      >
-        {initials}
-      </span>
-    );
-  }
-  return (
-    // eslint-disable-next-line @next/next/no-img-element
-    <img
-      src={photo}
-      alt={name}
-      className="h-10 w-10 shrink-0 rounded-full object-cover ring-1 ring-black/5"
-      onError={() => setFailed(true)}
-    />
-  );
-}
