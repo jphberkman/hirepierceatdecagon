@@ -139,9 +139,6 @@ export default function HirePierceAtDecagonPage() {
         {/* hero content */}
         <div className="relative z-10 mx-auto grid max-w-6xl gap-12 px-6 pb-24 pt-16 md:grid-cols-[1.4fr_1fr] md:gap-16 md:pb-28 md:pt-20">
           <div>
-            <p className="mb-6 text-sm uppercase tracking-[0.18em] text-white/80">
-              My mission
-            </p>
             <h1 className="text-5xl font-semibold leading-[1.05] tracking-tight md:text-6xl lg:text-7xl">
               Here&apos;s why I want
               <br />
