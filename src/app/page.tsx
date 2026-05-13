@@ -80,7 +80,7 @@ export default function HirePierceAtDecagonPage() {
 
         {/* announcement bar */}
         <div className="relative z-10 flex items-center justify-center bg-white/10 px-6 py-2 text-xs font-medium backdrop-blur-sm">
-          <span>Introducing: Pierce. Now interviewing for SDR roles.</span>
+          <span>Introducing: Pierce. Now interviewing for BDR roles.</span>
         </div>
 
         {/* nav */}
@@ -208,12 +208,9 @@ export default function HirePierceAtDecagonPage() {
       </section>
 
       {/* ─────────────── FOUNDER SECTION (mirrors Decagon's Founders) ─────────────── */}
-      <section className="bg-white py-20">
+      <section className="bg-white py-16">
         <div className="mx-auto max-w-6xl px-6">
-          <h2 className="text-5xl font-semibold tracking-tight md:text-6xl">
-            Founder
-          </h2>
-          <div className="mt-10 flex items-center gap-4">
+          <div className="flex items-center gap-4">
             <div>
               <a
                 href="https://www.linkedin.com/in/jpierceberkman/"
@@ -223,9 +220,7 @@ export default function HirePierceAtDecagonPage() {
               >
                 Pierce Berkman
               </a>
-              <p className="mt-1 text-[#0A0A23]/70">
-                Founder, ShopForCare. Aspiring Decagon SDR.
-              </p>
+              <p className="mt-1 text-[#0A0A23]/70">Aspiring Decagon BDR</p>
             </div>
             <a
               href="https://www.linkedin.com/in/jpierceberkman/"
