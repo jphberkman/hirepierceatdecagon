@@ -124,14 +124,6 @@ export default function HirePierceAtDecagonPage() {
             <a href="#pitch" className="text-white/80 transition hover:text-white">
               Pitch
             </a>
-            <a
-              href="https://www.linkedin.com/in/jpierceberkman/"
-              target="_blank"
-              rel="noreferrer"
-              className="text-white/80 transition hover:text-white"
-            >
-              Resume
-            </a>
           </nav>
           <div className="flex items-center gap-2">
             <a
