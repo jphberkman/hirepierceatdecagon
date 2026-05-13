@@ -78,14 +78,8 @@ export default function HirePierceAtDecagonPage() {
         </svg>
 
         {/* announcement bar */}
-        <div className="relative z-10 flex items-center justify-between bg-white/10 px-6 py-2 text-xs font-medium backdrop-blur-sm">
+        <div className="relative z-10 flex items-center justify-center bg-white/10 px-6 py-2 text-xs font-medium backdrop-blur-sm">
           <span>Introducing: Pierce. Now interviewing for SDR roles.</span>
-          <a
-            href="mailto:jphberkman@gmail.com"
-            className="hidden items-center gap-1 hover:underline sm:inline-flex"
-          >
-            Get a demo →
-          </a>
         </div>
 
         {/* nav */}
@@ -105,15 +99,9 @@ export default function HirePierceAtDecagonPage() {
               href="https://www.linkedin.com/in/jpierceberkman/"
               target="_blank"
               rel="noreferrer"
-              className="rounded-full px-4 py-2 text-sm font-semibold text-white/90 transition hover:text-white"
-            >
-              LinkedIn
-            </a>
-            <a
-              href="mailto:jphberkman@gmail.com"
               className="rounded-full bg-white px-4 py-2 text-sm font-semibold text-[#0A0A23] transition hover:bg-white/90"
             >
-              Get a demo
+              LinkedIn
             </a>
           </div>
         </header>
@@ -140,16 +128,10 @@ export default function HirePierceAtDecagonPage() {
             </p>
             <div className="flex flex-wrap gap-3 md:justify-end">
               <a
-                href="mailto:jphberkman@gmail.com"
-                className="rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-[#0A0A23] transition hover:bg-white/90"
-              >
-                Get a demo
-              </a>
-              <a
                 href="https://www.linkedin.com/in/jpierceberkman/"
                 target="_blank"
                 rel="noreferrer"
-                className="rounded-full border border-white/40 px-5 py-2.5 text-sm font-semibold text-white transition hover:border-white"
+                className="rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-[#0A0A23] transition hover:bg-white/90"
               >
                 Watch pitch
               </a>
@@ -284,16 +266,10 @@ export default function HirePierceAtDecagonPage() {
 
           <div className="mt-12 flex flex-wrap items-center gap-3">
             <a
-              href="mailto:jphberkman@gmail.com"
-              className="rounded-full bg-[#5B5BFF] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#4747e8]"
-            >
-              Get a demo
-            </a>
-            <a
               href="https://www.linkedin.com/in/jpierceberkman/"
               target="_blank"
               rel="noreferrer"
-              className="rounded-full border border-[#0A0A23]/15 px-6 py-3 text-sm font-semibold text-[#0A0A23] transition hover:border-[#0A0A23]/40"
+              className="rounded-full bg-[#5B5BFF] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#4747e8]"
             >
               View on LinkedIn →
             </a>
