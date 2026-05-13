@@ -35,9 +35,10 @@ const STATS = [
 const LOGOS = [
   "University of Miami",
   "Sachs Policy Group",
+  "UHealth",
+  "Lululemon",
   "ShopForCare",
-  "Hospital Ops",
-  "Digital Health",
+  "Rothman Orthopedics",
 ];
 
 export default function HirePierceAtDecagonPage() {
@@ -128,20 +129,35 @@ export default function HirePierceAtDecagonPage() {
             </h1>
           </div>
 
-          <div className="flex flex-col justify-end gap-8 md:items-end">
-            <p className="max-w-sm text-base leading-relaxed text-white/85 md:text-right">
-              In the era of AI agents, every dial still matters. Treat every
-              call like it&apos;s the only one. I&apos;d like the shot.
-            </p>
-            <div className="flex flex-wrap gap-3 md:justify-end">
-              <a
-                href="https://www.linkedin.com/in/jpierceberkman/"
-                target="_blank"
-                rel="noreferrer"
-                className="rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-[#0A0A23] transition hover:bg-white/90"
-              >
-                Watch pitch
-              </a>
+          <div className="flex items-center justify-center md:justify-end">
+            <div className="relative">
+              <div
+                aria-hidden
+                className="absolute -inset-3 rounded-3xl bg-gradient-to-tr from-white/40 to-white/0 opacity-70 blur-2xl"
+              />
+              <div className="relative h-80 w-80 overflow-hidden rounded-3xl bg-[#0A0A23]/20 shadow-2xl ring-1 ring-white/30 md:h-[26rem] md:w-[26rem]">
+                {!imgFailed ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    src="/pierce.jpg"
+                    alt="Pierce Berkman"
+                    className="h-full w-full object-cover"
+                    onError={() => setImgFailed(true)}
+                  />
+                ) : (
+                  <div className="flex h-full w-full flex-col items-center justify-center gap-3 p-6 text-center text-white/70">
+                    <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white/10 text-2xl font-semibold text-white">
+                      PB
+                    </div>
+                    <p className="text-sm">
+                      Drop a photo at{" "}
+                      <code className="rounded bg-white/10 px-1.5 py-0.5 text-xs">
+                        /public/pierce.jpg
+                      </code>
+                    </p>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         </div>
@@ -194,55 +210,32 @@ export default function HirePierceAtDecagonPage() {
       {/* ─────────────── FOUNDER SECTION (mirrors Decagon's Founders) ─────────────── */}
       <section className="bg-white py-20">
         <div className="mx-auto max-w-6xl px-6">
-          <div className="grid gap-10 md:grid-cols-[1fr_1.6fr] md:gap-16">
+          <h2 className="text-5xl font-semibold tracking-tight md:text-6xl">
+            Founder
+          </h2>
+          <div className="mt-10 flex items-center gap-4">
             <div>
-              <h2 className="text-5xl font-semibold tracking-tight md:text-6xl">
-                Founder
-              </h2>
-              <div className="mt-10">
-                <a
-                  href="https://www.linkedin.com/in/jpierceberkman/"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-xl font-semibold text-[#5B5BFF] underline-offset-4 hover:underline"
-                >
-                  Pierce Berkman
-                </a>
-                <p className="mt-1 text-[#0A0A23]/70">
-                  Founder, ShopForCare. Aspiring Decagon SDR.
-                </p>
-                <a
-                  href="https://www.linkedin.com/in/jpierceberkman/"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="mt-4 inline-flex h-9 w-9 items-center justify-center rounded-md bg-[#0A0A23] text-white transition hover:bg-black"
-                  aria-label="LinkedIn"
-                >
-                  <LinkedInIcon />
-                </a>
-              </div>
+              <a
+                href="https://www.linkedin.com/in/jpierceberkman/"
+                target="_blank"
+                rel="noreferrer"
+                className="text-2xl font-semibold text-[#5B5BFF] underline-offset-4 hover:underline"
+              >
+                Pierce Berkman
+              </a>
+              <p className="mt-1 text-[#0A0A23]/70">
+                Founder, ShopForCare. Aspiring Decagon SDR.
+              </p>
             </div>
-
-            <div className="relative">
-              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl bg-[#0A0A23] ring-1 ring-black/5">
-                {!imgFailed ? (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img
-                    src="/pierce.jpg"
-                    alt="Pierce Berkman"
-                    className="h-full w-full object-cover"
-                    onError={() => setImgFailed(true)}
-                  />
-                ) : (
-                  <div className="flex h-full w-full flex-col items-center justify-center gap-3 text-center text-white/70">
-                    <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white/10 text-2xl font-semibold text-white">
-                      PB
-                    </div>
-                    <p className="text-sm">No photo yet</p>
-                  </div>
-                )}
-              </div>
-            </div>
+            <a
+              href="https://www.linkedin.com/in/jpierceberkman/"
+              target="_blank"
+              rel="noreferrer"
+              className="ml-2 inline-flex h-10 w-10 items-center justify-center rounded-md bg-[#0A0A23] text-white transition hover:bg-black"
+              aria-label="LinkedIn"
+            >
+              <LinkedInIcon />
+            </a>
           </div>
         </div>
       </section>
