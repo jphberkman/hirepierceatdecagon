@@ -92,7 +92,14 @@ export default function HirePierceAtDecagonPage() {
             <NavLink>Background</NavLink>
             <NavLink>Stats</NavLink>
             <NavLink>Pitch</NavLink>
-            <NavLink>Contact</NavLink>
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noreferrer"
+              className="text-white/80 transition hover:text-white"
+            >
+              Resume
+            </a>
           </nav>
           <div className="flex items-center gap-2">
             <a
