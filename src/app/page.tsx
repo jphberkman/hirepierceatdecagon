@@ -37,14 +37,14 @@ const QUOTES = [
     role: "Manager, Lululemon",
   },
   {
-    text: "His smile is contagious.",
-    author: "Jeffrey Sachs",
-    role: "CEO, Sachs Policy Group",
-  },
-  {
     text: "You have, maybe without even knowing, created a more seamless experience for our guests and have made their time in-store more enjoyable!",
     author: "Stephanie Mercado",
     role: "Manager, Lululemon",
+  },
+  {
+    text: "His smile is contagious.",
+    author: "Jeffrey Sachs",
+    role: "CEO, Sachs Policy Group",
   },
 ];
 
@@ -218,7 +218,7 @@ export default function HirePierceAtDecagonPage() {
                   <path d="M7.2 6C4.3 6 2 8.3 2 11.2c0 2.7 1.9 4.6 4.4 4.6.4 0 .7-.05 1-.1-.5 1.4-1.8 2.7-3.7 3.4l.9 1.4c3.3-1 5.7-3.7 5.7-7.5V11C10.3 8 8.8 6 7.2 6zm10.4 0c-2.9 0-5.2 2.3-5.2 5.2 0 2.7 1.9 4.6 4.4 4.6.4 0 .7-.05 1-.1-.5 1.4-1.8 2.7-3.7 3.4l.9 1.4c3.3-1 5.7-3.7 5.7-7.5V11c0-3-1.5-5-3.1-5z" />
                 </svg>
                 <blockquote className="mt-4 flex-1 text-xl leading-relaxed text-[#0A0A23]">
-                  {q.text}
+                  {`“${q.text}”`}
                 </blockquote>
                 <figcaption className="mt-6">
                   <span className="font-semibold text-[#0A0A23]">
