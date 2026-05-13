@@ -42,7 +42,7 @@ const QUOTES = [
     role: "CEO, Sachs Policy Group",
   },
   {
-    text: "Your entrepreneurial ways ALWAYS shine through.",
+    text: "You have, maybe without even knowing, created a more seamless experience for our guests and have made their time in-store more enjoyable!",
     author: "Stephanie Mercado",
     role: "Manager, Lululemon",
   },
