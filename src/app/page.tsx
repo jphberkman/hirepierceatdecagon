@@ -25,26 +25,26 @@ const PARAGRAPHS_AFTER_LIST = [
   "I’m ready to start changing the narrative.",
 ];
 
-const STATS = [
+const QUOTES = [
   {
-    label: "Smile contagion rate",
-    value: "100%",
-    sub: "Per Dr. Jeffrey Sachs, CEO, SPG",
+    text: "Pierce performed at the level of a full-time post-master's level associate. His energy and scholarship set an example for his colleagues.",
+    author: "Dr. Jeffrey A. Sachs",
+    role: "CEO, Sachs Policy Group",
   },
   {
-    label: "Manhattan hospitals indexed",
-    value: "50+",
-    sub: "ShopForCare",
+    text: "You understand the big picture and practice mindful communication when presenting your new ideas to our team.",
+    author: "Stephanie Mercado",
+    role: "Manager, Lululemon",
   },
   {
-    label: "Coalitions co-built",
-    value: "1",
-    sub: "IDD advocacy at Sachs Policy Group",
+    text: "His smile is contagious.",
+    author: "Dr. Jeffrey A. Sachs",
+    role: "CEO, Sachs Policy Group",
   },
   {
-    label: "Career destinations",
-    value: "1",
-    sub: "Decagon",
+    text: "Whether it's pulling restock without being asked, asking to put the surfboard outside to attract guests, or even suggesting key chains at cash to increase UPT.",
+    author: "Stephanie Mercado",
+    role: "Manager, Lululemon",
   },
 ];
 
@@ -204,21 +204,32 @@ export default function HirePierceAtDecagonPage() {
           </h2>
 
           <div className="mt-12 grid gap-5 md:grid-cols-2">
-            {STATS.map((stat) => (
-              <div
-                key={stat.label}
-                className="rounded-3xl bg-white/70 p-8 ring-1 ring-black/5 backdrop-blur-sm"
+            {QUOTES.map((q, i) => (
+              <figure
+                key={i}
+                className="flex flex-col rounded-3xl bg-white/70 p-8 ring-1 ring-black/5 backdrop-blur-sm"
               >
-                <p className="text-sm font-medium text-[#0A0A23]/70">
-                  {stat.label}
-                </p>
-                <p className="mt-12 text-6xl font-semibold tracking-tight text-[#5B5BFF] md:text-7xl">
-                  {stat.value}
-                </p>
-                <p className="mt-2 text-xs uppercase tracking-[0.14em] text-[#0A0A23]/40">
-                  {stat.sub}
-                </p>
-              </div>
+                <svg
+                  className="h-7 w-7 text-[#5B5BFF]"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden
+                >
+                  <path d="M7.2 6C4.3 6 2 8.3 2 11.2c0 2.7 1.9 4.6 4.4 4.6.4 0 .7-.05 1-.1-.5 1.4-1.8 2.7-3.7 3.4l.9 1.4c3.3-1 5.7-3.7 5.7-7.5V11C10.3 8 8.8 6 7.2 6zm10.4 0c-2.9 0-5.2 2.3-5.2 5.2 0 2.7 1.9 4.6 4.4 4.6.4 0 .7-.05 1-.1-.5 1.4-1.8 2.7-3.7 3.4l.9 1.4c3.3-1 5.7-3.7 5.7-7.5V11c0-3-1.5-5-3.1-5z" />
+                </svg>
+                <blockquote className="mt-4 flex-1 text-xl leading-relaxed text-[#0A0A23]">
+                  {q.text}
+                </blockquote>
+                <figcaption className="mt-6">
+                  <span className="font-semibold text-[#0A0A23]">
+                    {q.author}
+                  </span>
+                  <span className="text-sm text-[#0A0A23]/60">
+                    {" "}
+                    · {q.role}
+                  </span>
+                </figcaption>
+              </figure>
             ))}
           </div>
         </div>
