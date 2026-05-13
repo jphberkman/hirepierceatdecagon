@@ -26,10 +26,26 @@ const PARAGRAPHS_AFTER_LIST = [
 ];
 
 const STATS = [
-  { label: "Manhattan hospitals indexed", value: "50+", sub: "ShopForCare" },
-  { label: "Cold calls dialed", value: "1,000+", sub: "Sachs Policy Group" },
-  { label: "Coachability score", value: "100%", sub: "Self-reported, but verifiable" },
-  { label: "Career destinations", value: "1", sub: "Decagon" },
+  {
+    label: "Smile contagion rate",
+    value: "100%",
+    sub: "Per Dr. Jeffrey Sachs, CEO, SPG",
+  },
+  {
+    label: "Manhattan hospitals indexed",
+    value: "50+",
+    sub: "ShopForCare",
+  },
+  {
+    label: "Coalitions co-built",
+    value: "1",
+    sub: "IDD advocacy at Sachs Policy Group",
+  },
+  {
+    label: "Career destinations",
+    value: "1",
+    sub: "Decagon",
+  },
 ];
 
 const LOGOS = [
@@ -127,11 +143,9 @@ export default function HirePierceAtDecagonPage() {
               My mission
             </p>
             <h1 className="text-5xl font-semibold leading-[1.05] tracking-tight md:text-6xl lg:text-7xl">
-              Empower Decagon to
+              Here&apos;s why I want
               <br />
-              deliver concierge sales
-              <br />
-              experiences
+              to work at Decagon
             </h1>
           </div>
 
