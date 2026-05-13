@@ -90,11 +90,17 @@ export default function HirePierceAtDecagonPage() {
             <span className="text-lg font-semibold tracking-tight">Pierce Berkman</span>
           </div>
           <nav className="hidden items-center gap-8 text-sm md:flex">
-            <NavLink>Background</NavLink>
-            <NavLink>Stats</NavLink>
-            <NavLink>Pitch</NavLink>
+            <a href="#background" className="text-white/80 transition hover:text-white">
+              Background
+            </a>
+            <a href="#stats" className="text-white/80 transition hover:text-white">
+              Stats
+            </a>
+            <a href="#pitch" className="text-white/80 transition hover:text-white">
+              Pitch
+            </a>
             <a
-              href="/resume.pdf"
+              href="https://www.linkedin.com/in/jpierceberkman/"
               target="_blank"
               rel="noreferrer"
               className="text-white/80 transition hover:text-white"
@@ -164,7 +170,7 @@ export default function HirePierceAtDecagonPage() {
       </section>
 
       {/* ─────────────── LOGO MARQUEE ─────────────── */}
-      <section className="border-y border-[#0A0A23]/10 bg-white py-8">
+      <section id="background" className="border-y border-[#0A0A23]/10 bg-white py-8 scroll-mt-4">
         <div className="mx-auto max-w-6xl px-6">
           <p className="mb-6 text-center text-xs uppercase tracking-[0.18em] text-[#0A0A23]/50">
             Where I&apos;ve learned
@@ -180,7 +186,7 @@ export default function HirePierceAtDecagonPage() {
       </section>
 
       {/* ─────────────── STATS BENTO ─────────────── */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-[#fbf7ff] via-[#f9eff7] to-[#fff3e9] py-20">
+      <section id="stats" className="relative overflow-hidden bg-gradient-to-b from-[#fbf7ff] via-[#f9eff7] to-[#fff3e9] py-20 scroll-mt-4">
         <div className="mx-auto max-w-6xl px-6">
           <h2 className="max-w-3xl text-4xl font-semibold leading-tight tracking-tight md:text-5xl">
             Driving results that truly matter
@@ -236,7 +242,7 @@ export default function HirePierceAtDecagonPage() {
       </section>
 
       {/* ─────────────── BLURB ─────────────── */}
-      <section className="bg-white pb-24">
+      <section id="pitch" className="bg-white pb-24 scroll-mt-4">
         <div className="mx-auto max-w-3xl px-6">
           <p className="mb-4 text-sm uppercase tracking-[0.18em] text-[#5B5BFF]">
             The pitch
@@ -291,14 +297,6 @@ export default function HirePierceAtDecagonPage() {
         </div>
       </footer>
     </main>
-  );
-}
-
-function NavLink({ children }: { children: React.ReactNode }) {
-  return (
-    <span className="cursor-default text-white/80 transition hover:text-white">
-      {children}
-    </span>
   );
 }
 
