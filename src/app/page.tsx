@@ -105,7 +105,7 @@ export default function HirePierceAtDecagonPage() {
 
         {/* announcement bar */}
         <div className="relative z-10 flex items-center justify-center bg-white/10 px-6 py-2 text-xs font-medium backdrop-blur-sm">
-          <span>Introducing: Pierce. Now interviewing for BDR roles.</span>
+          <span>Introducing: Pierce. Now interviewing for SDR roles.</span>
         </div>
 
         {/* nav */}
@@ -255,7 +255,7 @@ export default function HirePierceAtDecagonPage() {
               >
                 Pierce Berkman
               </a>
-              <p className="mt-1 text-[#0A0A23]/70">Aspiring Decagon BDR</p>
+              <p className="mt-1 text-[#0A0A23]/70">Aspiring Decagon SDR</p>
             </div>
             <a
               href="https://www.linkedin.com/in/jpierceberkman/"
