@@ -2,35 +2,28 @@
 
 import { useState } from "react";
 
-const BLURB = `Hi,
-I'm Pierce. But you already know that.
-Quick refresher.
-I'm from outside Philadelphia and studied at the University of Miami. I majored in Global Health with a minor in Health Management and Policy. I've interned across healthcare, on the policy consulting side, advising digital health startups, and on the hospital enterprise side.
-At Sachs Policy Group, I made a lot of cold calls, sat in on many meetings, and spent more time than I'd like to admit on hold trying to get a straight answer.
-That was when it clicked for me.
-The hardest problems aren't usually in the product. They're in the layer between the customer and the answer.
-Decagon is rebuilding that layer by bringing customer experience back into support and grievances.
-Some people preferred Dr. Seuss. I preferred Curious George.
-I've always been a builder and a fixer. Growing up, my dad called me MacGyver because I was always building something.
-Yes, I was a Legos kid, but in third grade, I traded plastic bricks for real wood and taught myself to woodwork. I'm always learning, always digging deeper.
-This past year, I taught myself to code. Rather than build something that's been done before, I built a consumer platform that helps people understand their medical costs across Manhattan.
-Of course I integrated an AI agent. How could I not? Decagon's been doing it from the start.
-Every project teaches me something new. Every one adds a tool to the kit.
-Sales is the next one I want to pick up.
-I was not a football or lacrosse kid, but I was a rower.
-Rowing teaches you something most sports don't. You're in the same boat with your teammates, pulling toward the same finish line, but you're also competing against them for a seat.
-You have to be accountable. You have to pull your weight. You support the people around you while pushing yourself to be better than you were yesterday.
-That tension between team and individual, between camaraderie and competition, is where growth happens.
-From my conversations with the team at Decagon, it's also how you scale a sales org that keeps winning.
-What makes Decagon different is the part of the customer experience you're rebuilding.
-It's the part nobody loves. The complaints line. The hold music. The form that has to be filled out before anyone can help.
-Everyone wants to build a product that becomes a household name like Apple, Uber, or Instagram, with easy onboarding, a magical demo, and customers lining up before product launches.
-Decagon isn't trying to build its own name-brand product. You're helping companies deliver on the promises they've already made to their customers.
-It's the work that doesn't get applauded, but it's the work that decides whether someone actually gets the help they came for, or gives up and walks away.
-If you couldn't tell by now, I'm a self-starter.
-I'm curious. I'm ambitious. I'm coachable.
-I've heard no enough times to know the next dial is the only one that matters.
-I'd like the shot.`;
+const PARAGRAPHS_BEFORE_LIST = [
+  "Hi, I'm Pierce.",
+  "I've always been a self-starter, builder, and teammate. Growing up, my dad called me MacGyver because I was always taking things apart and putting them back together. I was a Lego kid, but in third grade, I traded plastic bricks for real wood and taught myself to woodwork.",
+  "In high school, I wasn't a mainstream athlete, such as a football or baseball player; I was a rower. Rowing teaches you something most sports don't: you're in the same boat with your teammates, driving toward the same finish line, but you're also competing against them for a seat.",
+];
+
+const LIST_ITEMS = [
+  "You have to be accountable.",
+  "You have to pull your weight.",
+  "You have to support the people around you, but are constantly competing.",
+];
+
+const PARAGRAPHS_AFTER_LIST = [
+  "I went to the University of Miami, studied Global Health, and interned across the industry. I started on the policy consulting side, advising digital health founders, and then switched to hospital operations.",
+  "At Sachs Policy Group, I made a lot of cold calls and spent hours on hold trying to get a straight answer. It was a game. How many different answers can you get for the same question?",
+  "That was when it clicked. The hardest problems usually aren't in the product. They're in the layer between the customer and the answer.",
+  "This past year, I taught myself to code and built ShopForCare, a consumer platform that shows what every Manhattan hospital charges for a given procedure.",
+  "Which brings me here.",
+  "Decagon is not a typical customer support. It's a conversational AI platform delivering concierge customer experiences to strengthen relationships and help brands improve reputations.",
+  "We have all been on hold and had bad experiences.",
+  "I’m ready to start changing the narrative.",
+];
 
 export default function HirePierceAtDecagonPage() {
   const [imgFailed, setImgFailed] = useState(false);
@@ -122,8 +115,18 @@ export default function HirePierceAtDecagonPage() {
 
       {/* Blurb */}
       <section className="relative z-10 mx-auto max-w-3xl px-6 pb-16">
-        <div className="whitespace-pre-line text-lg leading-relaxed text-[#0A0A23]/85">
-          {BLURB}
+        <div className="space-y-6 text-lg leading-relaxed text-[#0A0A23]/85">
+          {PARAGRAPHS_BEFORE_LIST.map((p, i) => (
+            <p key={`pre-${i}`}>{p}</p>
+          ))}
+          <ul className="list-disc space-y-2 pl-8 marker:text-[#0A0A23]/40">
+            {LIST_ITEMS.map((item, i) => (
+              <li key={`li-${i}`}>{item}</li>
+            ))}
+          </ul>
+          {PARAGRAPHS_AFTER_LIST.map((p, i) => (
+            <p key={`post-${i}`}>{p}</p>
+          ))}
         </div>
 
         <div className="mt-12 flex flex-wrap items-center gap-3">
