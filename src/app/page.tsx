@@ -25,53 +25,217 @@ const PARAGRAPHS_AFTER_LIST = [
   "I’m ready to start changing the narrative.",
 ];
 
+const STATS = [
+  { label: "Manhattan hospitals indexed", value: "50+", sub: "ShopForCare" },
+  { label: "Cold calls dialed", value: "1,000+", sub: "Sachs Policy Group" },
+  { label: "Coachability score", value: "100%", sub: "Self-reported, but verifiable" },
+  { label: "Career destinations", value: "1", sub: "Decagon" },
+];
+
+const LOGOS = [
+  "University of Miami",
+  "Sachs Policy Group",
+  "ShopForCare",
+  "Hospital Ops",
+  "Digital Health",
+];
+
 export default function HirePierceAtDecagonPage() {
   const [imgFailed, setImgFailed] = useState(false);
 
   return (
-    <main className="min-h-screen bg-white text-[#0A0A23] antialiased relative overflow-hidden">
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -top-40 -right-40 h-[520px] w-[520px] rounded-full blur-3xl opacity-50"
-        style={{
-          background:
-            "radial-gradient(closest-side, rgba(0,212,184,0.55), rgba(0,212,184,0))",
-        }}
-      />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute top-[700px] -left-48 h-[420px] w-[420px] rounded-full blur-3xl opacity-40"
-        style={{
-          background:
-            "radial-gradient(closest-side, rgba(99,102,241,0.45), rgba(99,102,241,0))",
-        }}
-      />
-
-      <header className="relative z-10 mx-auto flex max-w-6xl items-center justify-between px-6 py-6">
-        <div className="flex items-center gap-2">
-          <DecagonMark />
-          <span className="text-lg font-semibold tracking-tight">
-            Hire Pierce
-          </span>
-        </div>
-        <a
-          href="mailto:jphberkman@gmail.com"
-          className="rounded-full bg-[#00D4B8] px-5 py-2 text-sm font-semibold text-[#0A0A23] transition hover:bg-[#00bfa6]"
+    <main className="min-h-screen bg-white text-[#0A0A23] antialiased">
+      {/* ─────────────── HERO (purple gradient, Decagon-style) ─────────────── */}
+      <section className="relative overflow-hidden text-white">
+        <div
+          aria-hidden
+          className="absolute inset-0 bg-[linear-gradient(135deg,#4F46E5_0%,#6D5BFF_35%,#8A5BFF_65%,#B66BFF_100%)]"
+        />
+        {/* prism overlay */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 opacity-50 mix-blend-screen"
+          style={{
+            background:
+              "radial-gradient(60% 50% at 70% 60%, rgba(255,180,140,0.5), transparent 70%), radial-gradient(40% 40% at 30% 30%, rgba(180,160,255,0.5), transparent 70%)",
+          }}
+        />
+        <svg
+          aria-hidden
+          className="pointer-events-none absolute right-0 top-0 h-full w-1/2 opacity-30"
+          viewBox="0 0 600 600"
         >
-          Get in touch
-        </a>
-      </header>
+          <polygon
+            points="100,500 500,100 580,300 250,580"
+            fill="white"
+            opacity="0.08"
+          />
+          <polygon
+            points="200,560 540,180 600,360 320,600"
+            fill="white"
+            opacity="0.08"
+          />
+        </svg>
 
-      {/* Hero — photo + headline */}
-      <section className="relative z-10 mx-auto max-w-6xl px-6 pb-16 pt-12 md:pt-20">
-        <div className="grid items-center gap-12 md:grid-cols-2 md:gap-16">
-          <div className="order-1 md:order-2 flex justify-center md:justify-end">
-            <div className="relative">
+        {/* announcement bar */}
+        <div className="relative z-10 flex items-center justify-between bg-white/10 px-6 py-2 text-xs font-medium backdrop-blur-sm">
+          <span>Introducing: Pierce. Now interviewing for SDR roles.</span>
+          <a
+            href="mailto:jphberkman@gmail.com"
+            className="hidden items-center gap-1 hover:underline sm:inline-flex"
+          >
+            Get a demo →
+          </a>
+        </div>
+
+        {/* nav */}
+        <header className="relative z-10 mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
+          <div className="flex items-center gap-2">
+            <DecagonMark />
+            <span className="text-lg font-semibold tracking-tight">Pierce</span>
+          </div>
+          <nav className="hidden items-center gap-8 text-sm md:flex">
+            <NavLink>Background</NavLink>
+            <NavLink>Stats</NavLink>
+            <NavLink>Pitch</NavLink>
+            <NavLink>Contact</NavLink>
+          </nav>
+          <div className="flex items-center gap-2">
+            <a
+              href="https://www.linkedin.com/in/jpierceberkman/"
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-full px-4 py-2 text-sm font-semibold text-white/90 transition hover:text-white"
+            >
+              LinkedIn
+            </a>
+            <a
+              href="mailto:jphberkman@gmail.com"
+              className="rounded-full bg-white px-4 py-2 text-sm font-semibold text-[#0A0A23] transition hover:bg-white/90"
+            >
+              Get a demo
+            </a>
+          </div>
+        </header>
+
+        {/* hero content */}
+        <div className="relative z-10 mx-auto grid max-w-6xl gap-12 px-6 pb-24 pt-16 md:grid-cols-[1.4fr_1fr] md:gap-16 md:pb-28 md:pt-20">
+          <div>
+            <p className="mb-6 text-sm uppercase tracking-[0.18em] text-white/80">
+              My mission
+            </p>
+            <h1 className="text-5xl font-semibold leading-[1.05] tracking-tight md:text-6xl lg:text-7xl">
+              Empower Decagon to
+              <br />
+              deliver concierge sales
+              <br />
+              experiences
+            </h1>
+          </div>
+
+          <div className="flex flex-col justify-end gap-8 md:items-end">
+            <p className="max-w-sm text-base leading-relaxed text-white/85 md:text-right">
+              In the era of AI agents, every dial still matters. Treat every
+              call like it&apos;s the only one. I&apos;d like the shot.
+            </p>
+            <div className="flex flex-wrap gap-3 md:justify-end">
+              <a
+                href="mailto:jphberkman@gmail.com"
+                className="rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-[#0A0A23] transition hover:bg-white/90"
+              >
+                Get a demo
+              </a>
+              <a
+                href="https://www.linkedin.com/in/jpierceberkman/"
+                target="_blank"
+                rel="noreferrer"
+                className="rounded-full border border-white/40 px-5 py-2.5 text-sm font-semibold text-white transition hover:border-white"
+              >
+                Watch pitch
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─────────────── LOGO MARQUEE ─────────────── */}
+      <section className="border-y border-[#0A0A23]/10 bg-white py-8">
+        <div className="mx-auto max-w-6xl px-6">
+          <p className="mb-6 text-center text-xs uppercase tracking-[0.18em] text-[#0A0A23]/50">
+            Where I&apos;ve learned
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-4 text-lg font-semibold tracking-tight text-[#0A0A23]/60">
+            {LOGOS.map((logo) => (
+              <span key={logo} className="opacity-70">
+                {logo}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─────────────── STATS BENTO ─────────────── */}
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#fbf7ff] via-[#f9eff7] to-[#fff3e9] py-20">
+        <div className="mx-auto max-w-6xl px-6">
+          <h2 className="max-w-3xl text-4xl font-semibold leading-tight tracking-tight md:text-5xl">
+            Driving results that truly matter
+          </h2>
+
+          <div className="mt-12 grid gap-5 md:grid-cols-2">
+            {STATS.map((stat) => (
               <div
-                aria-hidden
-                className="absolute -inset-3 rounded-3xl bg-gradient-to-tr from-[#00D4B8] to-[#6366F1] opacity-80 blur-2xl"
-              />
-              <div className="relative h-72 w-72 overflow-hidden rounded-3xl bg-[#0A0A23] shadow-xl ring-1 ring-black/5 md:h-96 md:w-96">
+                key={stat.label}
+                className="rounded-3xl bg-white/70 p-8 ring-1 ring-black/5 backdrop-blur-sm"
+              >
+                <p className="text-sm font-medium text-[#0A0A23]/70">
+                  {stat.label}
+                </p>
+                <p className="mt-12 text-6xl font-semibold tracking-tight text-[#5B5BFF] md:text-7xl">
+                  {stat.value}
+                </p>
+                <p className="mt-2 text-xs uppercase tracking-[0.14em] text-[#0A0A23]/40">
+                  {stat.sub}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─────────────── FOUNDER SECTION (mirrors Decagon's Founders) ─────────────── */}
+      <section className="bg-white py-20">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="grid gap-10 md:grid-cols-[1fr_1.6fr] md:gap-16">
+            <div>
+              <h2 className="text-5xl font-semibold tracking-tight md:text-6xl">
+                Founder
+              </h2>
+              <div className="mt-10">
+                <a
+                  href="https://www.linkedin.com/in/jpierceberkman/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-xl font-semibold text-[#5B5BFF] underline-offset-4 hover:underline"
+                >
+                  Pierce Berkman
+                </a>
+                <p className="mt-1 text-[#0A0A23]/70">
+                  Founder, ShopForCare. Aspiring Decagon SDR.
+                </p>
+                <a
+                  href="https://www.linkedin.com/in/jpierceberkman/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-4 inline-flex h-9 w-9 items-center justify-center rounded-md bg-[#0A0A23] text-white transition hover:bg-black"
+                  aria-label="LinkedIn"
+                >
+                  <LinkedInIcon />
+                </a>
+              </div>
+            </div>
+
+            <div className="relative">
+              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl bg-[#0A0A23] ring-1 ring-black/5">
                 {!imgFailed ? (
                   // eslint-disable-next-line @next/next/no-img-element
                   <img
@@ -81,82 +245,89 @@ export default function HirePierceAtDecagonPage() {
                     onError={() => setImgFailed(true)}
                   />
                 ) : (
-                  <div className="flex h-full w-full flex-col items-center justify-center gap-3 p-6 text-center text-white/70">
+                  <div className="flex h-full w-full flex-col items-center justify-center gap-3 text-center text-white/70">
                     <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white/10 text-2xl font-semibold text-white">
                       PB
                     </div>
-                    <p className="text-sm">
-                      Drop a photo at{" "}
-                      <code className="rounded bg-white/10 px-1.5 py-0.5 text-xs">
-                        /public/pierce.jpg
-                      </code>
-                    </p>
+                    <p className="text-sm">No photo yet</p>
                   </div>
                 )}
               </div>
             </div>
           </div>
+        </div>
+      </section>
 
-          <div className="order-2 md:order-1">
-            <p className="mb-4 inline-flex items-center gap-2 rounded-full bg-[#0A0A23]/5 px-3 py-1 text-xs font-medium tracking-wide text-[#0A0A23]/70">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#00D4B8]" />
-              Built for the Decagon team
-            </p>
-            <h1 className="text-5xl font-bold leading-[1.05] tracking-tight md:text-6xl">
-              Hi, I&apos;m Pierce.
-              <br />
-              <span className="text-[#0A0A23]/60">
-                Here&apos;s why I want to work at Decagon.
-              </span>
-            </h1>
+      {/* ─────────────── BLURB ─────────────── */}
+      <section className="bg-white pb-24">
+        <div className="mx-auto max-w-3xl px-6">
+          <p className="mb-4 text-sm uppercase tracking-[0.18em] text-[#5B5BFF]">
+            The pitch
+          </p>
+          <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">
+            Here&apos;s why I want to work at Decagon.
+          </h2>
+
+          <div className="mt-10 space-y-6 text-lg leading-relaxed text-[#0A0A23]/85">
+            {PARAGRAPHS_BEFORE_LIST.map((p, i) => (
+              <p key={`pre-${i}`}>{p}</p>
+            ))}
+            <ul className="list-disc space-y-2 pl-8 marker:text-[#5B5BFF]">
+              {LIST_ITEMS.map((item, i) => (
+                <li key={`li-${i}`}>{item}</li>
+              ))}
+            </ul>
+            {PARAGRAPHS_AFTER_LIST.map((p, i) => (
+              <p key={`post-${i}`}>{p}</p>
+            ))}
+          </div>
+
+          <div className="mt-12 flex flex-wrap items-center gap-3">
+            <a
+              href="mailto:jphberkman@gmail.com"
+              className="rounded-full bg-[#5B5BFF] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#4747e8]"
+            >
+              Get a demo
+            </a>
+            <a
+              href="https://www.linkedin.com/in/jpierceberkman/"
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-full border border-[#0A0A23]/15 px-6 py-3 text-sm font-semibold text-[#0A0A23] transition hover:border-[#0A0A23]/40"
+            >
+              View on LinkedIn →
+            </a>
           </div>
         </div>
       </section>
 
-      {/* Blurb */}
-      <section className="relative z-10 mx-auto max-w-3xl px-6 pb-16">
-        <div className="space-y-6 text-lg leading-relaxed text-[#0A0A23]/85">
-          {PARAGRAPHS_BEFORE_LIST.map((p, i) => (
-            <p key={`pre-${i}`}>{p}</p>
-          ))}
-          <ul className="list-disc space-y-2 pl-8 marker:text-[#0A0A23]/40">
-            {LIST_ITEMS.map((item, i) => (
-              <li key={`li-${i}`}>{item}</li>
-            ))}
-          </ul>
-          {PARAGRAPHS_AFTER_LIST.map((p, i) => (
-            <p key={`post-${i}`}>{p}</p>
-          ))}
-        </div>
-
-        <div className="mt-12 flex flex-wrap items-center gap-3">
-          <a
-            href="mailto:jphberkman@gmail.com"
-            className="rounded-full bg-[#0A0A23] px-6 py-3 text-sm font-semibold text-white transition hover:bg-black"
-          >
-            Email me
-          </a>
-          <a
-            href="https://decagon.ai"
-            target="_blank"
-            rel="noreferrer"
-            className="rounded-full border border-[#0A0A23]/15 px-6 py-3 text-sm font-semibold text-[#0A0A23] transition hover:border-[#0A0A23]/40"
-          >
-            Visit Decagon →
-          </a>
-        </div>
-      </section>
-
-      <footer className="relative z-10 mx-auto max-w-6xl px-6 pb-10 text-sm text-[#0A0A23]/50">
-        <div className="flex flex-wrap items-center justify-between gap-4 border-t border-[#0A0A23]/10 pt-6">
+      {/* ─────────────── FOOTER ─────────────── */}
+      <footer className="border-t border-[#0A0A23]/10 bg-white">
+        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-6 py-8 text-sm text-[#0A0A23]/50">
           <span>© {new Date().getFullYear()} Pierce Berkman</span>
           <span>
-            Not affiliated with Decagon — a personal pitch from a fan of the
-            product.
+            A loving parody of{" "}
+            <a
+              href="https://decagon.ai"
+              target="_blank"
+              rel="noreferrer"
+              className="underline-offset-4 hover:underline"
+            >
+              decagon.ai
+            </a>
+            . Not affiliated with Decagon.
           </span>
         </div>
       </footer>
     </main>
+  );
+}
+
+function NavLink({ children }: { children: React.ReactNode }) {
+  return (
+    <span className="cursor-default text-white/80 transition hover:text-white">
+      {children}
+    </span>
   );
 }
 
@@ -172,12 +343,27 @@ function DecagonMark() {
     >
       <polygon
         points="50,4 78.5,15.5 96,40 96,60 78.5,84.5 50,96 21.5,84.5 4,60 4,40 21.5,15.5"
-        fill="#0A0A23"
+        fill="white"
+        fillOpacity="0.95"
       />
       <polygon
         points="50,22 68,30 80,46 80,54 68,70 50,78 32,70 20,54 20,46 32,30"
-        fill="#00D4B8"
+        fill="#5B5BFF"
       />
+    </svg>
+  );
+}
+
+function LinkedInIcon() {
+  return (
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      aria-hidden
+    >
+      <path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3V9zm7 0h3.8v1.7h.05c.53-.95 1.83-1.95 3.77-1.95C21.3 8.75 22 11 22 14v7h-4v-6.3c0-1.5-.03-3.42-2.08-3.42-2.08 0-2.4 1.62-2.4 3.3V21h-4V9z" />
     </svg>
   );
 }
