@@ -87,7 +87,7 @@ export default function HirePierceAtDecagonPage() {
         <header className="relative z-10 mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
           <div className="flex items-center gap-2">
             <DecagonMark />
-            <span className="text-lg font-semibold tracking-tight">Pierce</span>
+            <span className="text-lg font-semibold tracking-tight">Pierce Berkman</span>
           </div>
           <nav className="hidden items-center gap-8 text-sm md:flex">
             <NavLink>Background</NavLink>
