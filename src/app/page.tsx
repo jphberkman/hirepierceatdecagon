@@ -28,21 +28,21 @@ const PARAGRAPHS_AFTER_LIST = [
 const QUOTES = [
   {
     text: "Pierce performed at the level of a full-time post-master's level associate. His energy and scholarship set an example for his colleagues.",
-    author: "Dr. Jeffrey A. Sachs",
+    author: "Jeffrey Sachs",
     role: "CEO, Sachs Policy Group",
   },
   {
-    text: "You understand the big picture and practice mindful communication when presenting your new ideas to our team.",
+    text: "You stand in curiosity and question the 'why' behind everything we do.",
     author: "Stephanie Mercado",
     role: "Manager, Lululemon",
   },
   {
     text: "His smile is contagious.",
-    author: "Dr. Jeffrey A. Sachs",
+    author: "Jeffrey Sachs",
     role: "CEO, Sachs Policy Group",
   },
   {
-    text: "Whether it's pulling restock without being asked, asking to put the surfboard outside to attract guests, or even suggesting key chains at cash to increase UPT.",
+    text: "Your entrepreneurial ways ALWAYS shine through.",
     author: "Stephanie Mercado",
     role: "Manager, Lululemon",
   },
