@@ -25,26 +25,39 @@ const PARAGRAPHS_AFTER_LIST = [
   "I’m ready to start changing the narrative.",
 ];
 
+const PEOPLE = {
+  sachs: {
+    name: "Jeffrey Sachs",
+    role: "CEO, Sachs Policy Group",
+    linkedin: "https://www.linkedin.com/in/jeffrey-sachs-392103101/",
+    initials: "JS",
+    photo: "/people/sachs.jpg",
+  },
+  mercado: {
+    name: "Stephanie Mercado",
+    role: "Manager, Lululemon",
+    linkedin: "https://www.linkedin.com/in/stephanie-mercado-947678b4/",
+    initials: "SM",
+    photo: "/people/mercado.jpg",
+  },
+} as const;
+
 const QUOTES = [
   {
     text: "Pierce performed at the level of a full-time post-master's level associate. His energy and scholarship set an example for his colleagues.",
-    author: "Jeffrey Sachs",
-    role: "CEO, Sachs Policy Group",
+    person: PEOPLE.sachs,
   },
   {
     text: "You stand in curiosity and question the 'why' behind everything we do.",
-    author: "Stephanie Mercado",
-    role: "Manager, Lululemon",
+    person: PEOPLE.mercado,
   },
   {
     text: "You have, maybe without even knowing, created a more seamless experience for our guests and have made their time in-store more enjoyable!",
-    author: "Stephanie Mercado",
-    role: "Manager, Lululemon",
+    person: PEOPLE.mercado,
   },
   {
     text: "His smile is contagious.",
-    author: "Jeffrey Sachs",
-    role: "CEO, Sachs Policy Group",
+    person: PEOPLE.sachs,
   },
 ];
 
@@ -196,41 +209,39 @@ export default function HirePierceAtDecagonPage() {
         </div>
       </section>
 
-      {/* ─────────────── STATS BENTO ─────────────── */}
-      <section id="stats" className="relative overflow-hidden bg-gradient-to-b from-[#fbf7ff] via-[#f9eff7] to-[#fff3e9] py-20 scroll-mt-4">
-        <div className="mx-auto max-w-6xl px-6">
-          <h2 className="max-w-3xl text-4xl font-semibold leading-tight tracking-tight md:text-5xl">
-            Driving results that truly matter
+      {/* ─────────────── BLURB ─────────────── */}
+      <section id="pitch" className="bg-white py-20 scroll-mt-4">
+        <div className="mx-auto max-w-3xl px-6">
+          <p className="mb-4 text-sm uppercase tracking-[0.18em] text-[#5B5BFF]">
+            The pitch
+          </p>
+          <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">
+            Here&apos;s why I want to work at Decagon.
           </h2>
 
-          <div className="mt-12 grid gap-5 md:grid-cols-2">
-            {QUOTES.map((q, i) => (
-              <figure
-                key={i}
-                className="flex flex-col rounded-3xl bg-white/70 p-8 ring-1 ring-black/5 backdrop-blur-sm"
-              >
-                <svg
-                  className="h-7 w-7 text-[#5B5BFF]"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  aria-hidden
-                >
-                  <path d="M7.2 6C4.3 6 2 8.3 2 11.2c0 2.7 1.9 4.6 4.4 4.6.4 0 .7-.05 1-.1-.5 1.4-1.8 2.7-3.7 3.4l.9 1.4c3.3-1 5.7-3.7 5.7-7.5V11C10.3 8 8.8 6 7.2 6zm10.4 0c-2.9 0-5.2 2.3-5.2 5.2 0 2.7 1.9 4.6 4.4 4.6.4 0 .7-.05 1-.1-.5 1.4-1.8 2.7-3.7 3.4l.9 1.4c3.3-1 5.7-3.7 5.7-7.5V11c0-3-1.5-5-3.1-5z" />
-                </svg>
-                <blockquote className="mt-4 flex-1 text-xl leading-relaxed text-[#0A0A23]">
-                  {`“${q.text}”`}
-                </blockquote>
-                <figcaption className="mt-6">
-                  <span className="font-semibold text-[#0A0A23]">
-                    {q.author}
-                  </span>
-                  <span className="text-sm text-[#0A0A23]/60">
-                    {" "}
-                    · {q.role}
-                  </span>
-                </figcaption>
-              </figure>
+          <div className="mt-10 space-y-6 text-lg leading-relaxed text-[#0A0A23]/85">
+            {PARAGRAPHS_BEFORE_LIST.map((p, i) => (
+              <p key={`pre-${i}`}>{p}</p>
             ))}
+            <ul className="list-disc space-y-2 pl-8 marker:text-[#5B5BFF]">
+              {LIST_ITEMS.map((item, i) => (
+                <li key={`li-${i}`}>{item}</li>
+              ))}
+            </ul>
+            {PARAGRAPHS_AFTER_LIST.map((p, i) => (
+              <p key={`post-${i}`}>{p}</p>
+            ))}
+          </div>
+
+          <div className="mt-12 flex flex-wrap items-center gap-3">
+            <a
+              href="https://www.linkedin.com/in/jpierceberkman/"
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-full bg-[#5B5BFF] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#4747e8]"
+            >
+              View on LinkedIn →
+            </a>
           </div>
         </div>
       </section>
@@ -263,39 +274,55 @@ export default function HirePierceAtDecagonPage() {
         </div>
       </section>
 
-      {/* ─────────────── BLURB ─────────────── */}
-      <section id="pitch" className="bg-white pb-24 scroll-mt-4">
-        <div className="mx-auto max-w-3xl px-6">
-          <p className="mb-4 text-sm uppercase tracking-[0.18em] text-[#5B5BFF]">
-            The pitch
-          </p>
-          <h2 className="text-3xl font-semibold tracking-tight md:text-4xl">
-            Here&apos;s why I want to work at Decagon.
+      {/* ─────────────── STATS BENTO ─────────────── */}
+      <section id="stats" className="relative overflow-hidden bg-gradient-to-b from-[#fbf7ff] via-[#f9eff7] to-[#fff3e9] py-20 scroll-mt-4">
+        <div className="mx-auto max-w-6xl px-6">
+          <h2 className="max-w-3xl text-4xl font-semibold leading-tight tracking-tight md:text-5xl">
+            Driving results that truly matter
           </h2>
 
-          <div className="mt-10 space-y-6 text-lg leading-relaxed text-[#0A0A23]/85">
-            {PARAGRAPHS_BEFORE_LIST.map((p, i) => (
-              <p key={`pre-${i}`}>{p}</p>
+          <div className="mt-12 grid gap-5 md:grid-cols-2">
+            {QUOTES.map((q, i) => (
+              <figure
+                key={i}
+                className="flex flex-col rounded-3xl bg-white/70 p-8 ring-1 ring-black/5 backdrop-blur-sm"
+              >
+                <svg
+                  className="h-7 w-7 text-[#5B5BFF]"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden
+                >
+                  <path d="M7.2 6C4.3 6 2 8.3 2 11.2c0 2.7 1.9 4.6 4.4 4.6.4 0 .7-.05 1-.1-.5 1.4-1.8 2.7-3.7 3.4l.9 1.4c3.3-1 5.7-3.7 5.7-7.5V11C10.3 8 8.8 6 7.2 6zm10.4 0c-2.9 0-5.2 2.3-5.2 5.2 0 2.7 1.9 4.6 4.4 4.6.4 0 .7-.05 1-.1-.5 1.4-1.8 2.7-3.7 3.4l.9 1.4c3.3-1 5.7-3.7 5.7-7.5V11c0-3-1.5-5-3.1-5z" />
+                </svg>
+                <blockquote className="mt-4 flex-1 text-xl leading-relaxed text-[#0A0A23]">
+                  {`“${q.text}”`}
+                </blockquote>
+                <figcaption className="mt-6">
+                  <a
+                    href={q.person.linkedin}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="group inline-flex items-center gap-3"
+                  >
+                    <Avatar
+                      photo={q.person.photo}
+                      initials={q.person.initials}
+                      name={q.person.name}
+                    />
+                    <span className="flex flex-col">
+                      <span className="flex items-center gap-1.5 font-semibold text-[#0A0A23] group-hover:underline">
+                        {q.person.name}
+                        <LinkedInIcon className="h-3.5 w-3.5 text-[#0A0A23]/40" />
+                      </span>
+                      <span className="text-sm text-[#0A0A23]/60">
+                        {q.person.role}
+                      </span>
+                    </span>
+                  </a>
+                </figcaption>
+              </figure>
             ))}
-            <ul className="list-disc space-y-2 pl-8 marker:text-[#5B5BFF]">
-              {LIST_ITEMS.map((item, i) => (
-                <li key={`li-${i}`}>{item}</li>
-              ))}
-            </ul>
-            {PARAGRAPHS_AFTER_LIST.map((p, i) => (
-              <p key={`post-${i}`}>{p}</p>
-            ))}
-          </div>
-
-          <div className="mt-12 flex flex-wrap items-center gap-3">
-            <a
-              href="https://www.linkedin.com/in/jpierceberkman/"
-              target="_blank"
-              rel="noreferrer"
-              className="rounded-full bg-[#5B5BFF] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#4747e8]"
-            >
-              View on LinkedIn →
-            </a>
           </div>
         </div>
       </section>
@@ -345,9 +372,10 @@ function DecagonMark() {
   );
 }
 
-function LinkedInIcon() {
+function LinkedInIcon({ className }: { className?: string }) {
   return (
     <svg
+      className={className}
       width="16"
       height="16"
       viewBox="0 0 24 24"
@@ -356,5 +384,36 @@ function LinkedInIcon() {
     >
       <path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3V9zm7 0h3.8v1.7h.05c.53-.95 1.83-1.95 3.77-1.95C21.3 8.75 22 11 22 14v7h-4v-6.3c0-1.5-.03-3.42-2.08-3.42-2.08 0-2.4 1.62-2.4 3.3V21h-4V9z" />
     </svg>
+  );
+}
+
+function Avatar({
+  photo,
+  initials,
+  name,
+}: {
+  photo: string;
+  initials: string;
+  name: string;
+}) {
+  const [failed, setFailed] = useState(false);
+  if (failed) {
+    return (
+      <span
+        className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#5B5BFF] text-xs font-semibold text-white"
+        aria-label={name}
+      >
+        {initials}
+      </span>
+    );
+  }
+  return (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src={photo}
+      alt={name}
+      className="h-10 w-10 shrink-0 rounded-full object-cover ring-1 ring-black/5"
+      onError={() => setFailed(true)}
+    />
   );
 }
