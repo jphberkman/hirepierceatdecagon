@@ -224,27 +224,6 @@ export default function HirePierceAtDecagonPage() {
         </div>
       </section>
 
-      {/* ─────────────── REFERENCES (mirrors Decagon's testimonials) ─────────────── */}
-      <section id="references" className="bg-white py-20 scroll-mt-4">
-        <div className="mx-auto max-w-6xl px-6">
-          <h2 className="max-w-3xl text-4xl font-semibold leading-tight tracking-tight md:text-5xl">
-            References say it best
-          </h2>
-          <div className="mt-12 grid gap-6 md:grid-cols-2">
-            <Quote
-              text="Pierce performed at the level of a full-time post-master's level associate. His energy and scholarship set an example for his colleagues."
-              author="Dr. Jeffrey A. Sachs"
-              role="CEO, Sachs Policy Group"
-            />
-            <Quote
-              text="Your initiative and drive have directly impacted the business and guest experience — whether it's pulling restock without being asked or suggesting key chains at cash to increase UPT."
-              author="Stephanie Mercado"
-              role="Manager, Lululemon"
-            />
-          </div>
-        </div>
-      </section>
-
       {/* ─────────────── FOUNDER SECTION (mirrors Decagon's Founders) ─────────────── */}
       <section className="bg-white py-16">
         <div className="mx-auto max-w-6xl px-6">
@@ -329,36 +308,6 @@ export default function HirePierceAtDecagonPage() {
         </div>
       </footer>
     </main>
-  );
-}
-
-function Quote({
-  text,
-  author,
-  role,
-}: {
-  text: string;
-  author: string;
-  role: string;
-}) {
-  return (
-    <figure className="rounded-3xl bg-gradient-to-br from-[#fbf7ff] to-[#f9eff7] p-8 ring-1 ring-black/5">
-      <svg
-        className="h-7 w-7 text-[#5B5BFF]"
-        viewBox="0 0 24 24"
-        fill="currentColor"
-        aria-hidden
-      >
-        <path d="M7.2 6C4.3 6 2 8.3 2 11.2c0 2.7 1.9 4.6 4.4 4.6.4 0 .7-.05 1-.1-.5 1.4-1.8 2.7-3.7 3.4l.9 1.4c3.3-1 5.7-3.7 5.7-7.5V11C10.3 8 8.8 6 7.2 6zm10.4 0c-2.9 0-5.2 2.3-5.2 5.2 0 2.7 1.9 4.6 4.4 4.6.4 0 .7-.05 1-.1-.5 1.4-1.8 2.7-3.7 3.4l.9 1.4c3.3-1 5.7-3.7 5.7-7.5V11c0-3-1.5-5-3.1-5z" />
-      </svg>
-      <blockquote className="mt-4 text-lg leading-relaxed text-[#0A0A23]">
-        {text}
-      </blockquote>
-      <figcaption className="mt-6">
-        <p className="font-semibold text-[#0A0A23]">{author}</p>
-        <p className="text-sm text-[#0A0A23]/60">{role}</p>
-      </figcaption>
-    </figure>
   );
 }
 
